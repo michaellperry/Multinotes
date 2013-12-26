@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application x:Class="Multinotes.WinApp.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:Multinotes.WinApp" xmlns:vm="using:Multinotes.WinApp.ViewModels">
+
+<Application.Resources>
+    <ResourceDictionary>
+      <vm:ViewModelLocator x:Key="Locator" />
+    </ResourceDictionary>
+  </Application.Resources></Application>
