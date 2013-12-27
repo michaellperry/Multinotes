@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.WinApp", "Multin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.PhoneApp", "Multinotes.PhoneApp\Multinotes.PhoneApp.csproj", "{0F8C15A5-73FD-495F-88B0-16F55187F7BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.UnitTest", "Multinotes.UnitTest\Multinotes.UnitTest.csproj", "{32395592-8808-4096-A277-8876047E559A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,16 @@ Global
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Release|x86.ActiveCfg = Release|x86
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Release|x86.Build.0 = Release|x86
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Release|x86.Deploy.0 = Release|x86
+		{32395592-8808-4096-A277-8876047E559A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Release|x64.ActiveCfg = Release|Any CPU
+		{32395592-8808-4096-A277-8876047E559A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
