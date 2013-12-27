@@ -36,21 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="UpdateControls">
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.dll</HintPath>
-    </Reference>
-    <Reference Include="UpdateControls.Correspondence">
-      <HintPath>..\packages\Correspondence.2.2.0.0\lib\net45\UpdateControls.Correspondence.dll</HintPath>
-    </Reference>
-    <Reference Include="UpdateControls.Correspondence.Memory">
-      <HintPath>..\packages\Correspondence.UnitTest.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="UpdateControls.Forms">
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="UpdateControls.XAML">
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.XAML.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -65,7 +50,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ModelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,9 +57,6 @@
       <Project>{0b7873b9-ce6f-4cc9-b468-69695c37ca2d}</Project>
       <Name>Multinotes.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
