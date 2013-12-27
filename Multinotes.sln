@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.UnitTest.Phone",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.UnitTest.Store", "Multinotes.UnitTest.Store\Multinotes.UnitTest.Store.csproj", "{7CA16335-F026-4AA7-812C-7C5C0E36F698}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.Desktop", "Multinotes.Desktop\Multinotes.Desktop.csproj", "{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,20 @@ Global
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Release|x86.ActiveCfg = Release|x86
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Release|x86.Build.0 = Release|x86
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Release|x86.Deploy.0 = Release|x86
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|x64.ActiveCfg = Release|Any CPU
+		{A7C219CA-D9C6-4383-80EE-243A8E7AE2AC}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
