@@ -11,12 +11,14 @@ using UpdateControls.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Multinotes.Model;
+using UpdateControls.Fields;
 
 namespace Multinotes.Web
 {
     public class SynchronizationService
     {
         private Community _community;
+        private Independent<Domain> _domain = new Independent<Domain>();
 
         public void Initialize()
         {
@@ -32,7 +34,10 @@ namespace Multinotes.Web
             _community = new Community(storage);
 			_community.AddAsynchronousCommunicationStrategy(communication);
 			_community.Register<CorrespondenceModel>();
+            _community.Subscribe(() => Domain);
             _community.ClientApp = false;
+
+            LoadDomain();
 
             // Synchronize whenever the user has something to send.
             _community.FactAdded += delegate
@@ -58,6 +63,30 @@ namespace Multinotes.Web
         public Community Community
         {
             get { return _community; }
+        }
+
+        public Domain Domain
+        {
+            get
+            {
+                lock (this)
+                {
+                    return _domain;
+                }
+            }
+            set
+            {
+                lock (this)
+                {
+                    _domain.Value = value;
+                }
+            }
+        }
+
+        private async void LoadDomain()
+        {
+            var domain = await _community.AddFactAsync(new Domain());
+            Domain = domain;
         }
     }
 }

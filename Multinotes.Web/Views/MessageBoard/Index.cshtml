@@ -1,0 +1,18 @@
+﻿@model Multinotes.Web.Models.MessageBoardViewModel
+
+@{
+    ViewBag.Title = Model.Topic;
+}
+
+<h2>Message Board</h2>
+
+<div>
+    <h4>@Model.Topic</h4>
+	<hr />
+    <ul>
+        @foreach (var message in Model.Messages)
+        {
+            <li>@message</li>
+        }
+    </ul>
+</div>

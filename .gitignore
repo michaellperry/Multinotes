@@ -1,4 +1,5 @@
 packages/
+Multinotes.Web/App_Data/
 NuGet/Core/lib/
 
 $tf/
