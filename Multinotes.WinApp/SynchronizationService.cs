@@ -33,6 +33,9 @@ namespace Multinotes.WinApp
             _community.AddAsynchronousCommunicationStrategy(communication);
             _community.Register<CorrespondenceModel>();
             _community.Subscribe(() => _individual.Value);
+            _community.Subscribe(() => _individual.Value == null ?
+                null :
+                _individual.Value.MessageBoards);
 
             // Synchronize periodically.
             DispatcherTimer timer = new DispatcherTimer();
