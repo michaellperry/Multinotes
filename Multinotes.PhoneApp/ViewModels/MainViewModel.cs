@@ -1,37 +1,109 @@
-using Multinotes.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using UpdateControls.Correspondence;
+using Multinotes.Model;
+using Multinotes.PhoneApp.Models;
 using UpdateControls.XAML;
 
 namespace Multinotes.PhoneApp.ViewModels
 {
     public class MainViewModel
     {
-        private Community _community;
         private Individual _individual;
+        private SynchronizationService _synchronizationService;
+        private MessageBoardSelectionModel _selection;
 
-        public MainViewModel(Community community, Individual individual)
+        public MainViewModel(Individual individual, SynchronizationService synhronizationService, MessageBoardSelectionModel selection)
         {
-            _community = community;
             _individual = individual;
+            _synchronizationService = synhronizationService;
+            _selection = selection;
         }
 
         public bool Synchronizing
         {
-            get { return _community.Synchronizing; }
+            get { return _synchronizationService.Community.Synchronizing; }
         }
 
         public string LastException
         {
             get
             {
-                return _community.LastException == null
-                    ? String.Empty
-                    : _community.LastException.Message;
+                Exception lastException = _synchronizationService.Community.LastException;
+                return lastException == null
+                    ? null
+                    : lastException.Message;
             }
         }
+
+        public bool ShowInstructions
+        {
+            get
+            {
+                return
+                    !_synchronizationService.Community.Synchronizing &&
+                    !_individual.MessageBoards.Any();
+            }
+        }
+
+        public IEnumerable<MessageBoardViewModel> MessageBoards
+        {
+            get
+            {
+                return
+                    from share in _individual.Shares
+                    orderby share.MessageBoard.Topic
+                    select new MessageBoardViewModel(share);
+            }
+        }
+
+        public void SetSelectedMessageBoard(MessageBoardViewModel value)
+        {
+            _selection.SelectedShare = value == null
+                ? null
+                : value.Share;
+        }
+
+        public string Text
+        {
+            get { return _selection.Text; }
+            set { _selection.Text = value; }
+        }
+
+        public ICommand SendMessage
+        {
+            get
+            {
+                return MakeCommand
+                    .When(() =>
+                        _selection.SelectedShare != null &&
+                        !String.IsNullOrEmpty(_selection.Text))
+                    .Do(delegate
+                    {
+                        _selection.SelectedShare.MessageBoard.SendMessageAsync(_selection.Text);
+                        _selection.Text = null;
+                    });
+            }
+        }
+
+        public ICommand LeaveBoard
+        {
+            get
+            {
+                return MakeCommand
+                    .When(() => _selection.SelectedShare != null)
+                    .Do(delegate
+                    {
+                        if (ConfirmLeaveBoard != null && ConfirmLeaveBoard(_selection.SelectedShare.MessageBoard))
+                        {
+                            _selection.SelectedShare.Leave();
+                            _selection.SelectedShare = null;
+                        }
+                    });
+            }
+        }
+
+        public event Func<MessageBoard, bool> ConfirmLeaveBoard;
     }
 }

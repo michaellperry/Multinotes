@@ -28,6 +28,7 @@ namespace Multinotes.PhoneApp
             _community.AddAsynchronousCommunicationStrategy(communication);
             _community.Register<CorrespondenceModel>();
             _community.Subscribe(() => _individual);
+            _community.Subscribe(() => _individual.MessageBoards);
 
             CreateIndividual(http);
 

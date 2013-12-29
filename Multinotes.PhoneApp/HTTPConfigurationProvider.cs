@@ -20,7 +20,7 @@ namespace Multinotes.PhoneApp
             get
             {
                 string address = "https://api.facetedworlds.com/correspondence_server_web/bin";
-                string apiKey = "<<Your API key>>";
+                string apiKey = "D1920D309A4E43EB85BD14833AFEF7E8";
                 return new HTTPConfiguration(address, "Multinotes.PhoneApp", apiKey);
             }
         }
