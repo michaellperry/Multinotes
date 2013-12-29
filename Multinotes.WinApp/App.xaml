@@ -4,5 +4,8 @@
 <Application.Resources>
     <ResourceDictionary>
       <vm:ViewModelLocator x:Key="Locator" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Common/StandardStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources></Application>
