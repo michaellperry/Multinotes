@@ -10,10 +10,12 @@
     xmlns:Itzben="clr-namespace:Itzben;assembly=Itzben"
     xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:views="clr-namespace:Multinotes.PhoneApp.Views"
     x:Class="Multinotes.PhoneApp.Views.MainPage" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
+    Loaded="PhoneApplicationPage_Loaded"
     >
 	<phone:PhoneApplicationPage.Resources>
 		<Itzben:VisibleWhenTrueConverter x:Key="VisibleWhenTrueConverter"/>

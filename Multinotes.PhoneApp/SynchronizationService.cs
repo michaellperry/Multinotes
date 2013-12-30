@@ -8,13 +8,15 @@ using UpdateControls.Correspondence.FileStream;
 using UpdateControls.Correspondence.BinaryHTTPClient;
 using UpdateControls.Correspondence.BinaryHTTPClient.Notification;
 using Multinotes.Model;
+using UpdateControls.Fields;
 
 namespace Multinotes.PhoneApp
 {
     public class SynchronizationService
     {
         private Community _community;
-        private Individual _individual;
+        private Independent<Individual> _individual = new Independent<Individual>(
+            Individual.GetNullInstance());
 
         public void Initialize()
         {
@@ -27,8 +29,8 @@ namespace Multinotes.PhoneApp
             _community = new Community(storage);
             _community.AddAsynchronousCommunicationStrategy(communication);
             _community.Register<CorrespondenceModel>();
-            _community.Subscribe(() => _individual);
-            _community.Subscribe(() => _individual.MessageBoards);
+            _community.Subscribe(() => _individual.Value);
+            _community.Subscribe(() => _individual.Value.MessageBoards);
 
             CreateIndividual(http);
 
@@ -61,8 +63,9 @@ namespace Multinotes.PhoneApp
 
         private async void CreateIndividual(HTTPConfigurationProvider http)
         {
-            _individual = await _community.AddFactAsync(new Individual(GetAnonymousUserId()));
-            http.Individual = _individual;
+            var individual = await _community.AddFactAsync(new Individual(GetAnonymousUserId()));
+            _individual.Value = individual;
+            http.Individual = individual;
         }
 
         public void Synchronize()

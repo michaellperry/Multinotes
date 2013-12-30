@@ -27,11 +27,13 @@ namespace Multinotes.PhoneApp.ViewModels
             get
             {
                 return MakeCommand
-                    .When(() => !string.IsNullOrWhiteSpace(_selection.Topic))
                     .Do(delegate
                     {
-                        _individual.JoinMessageBoardAsync(_selection.Topic);
-                        _selection.Topic = null;
+                        if (!string.IsNullOrWhiteSpace(_selection.Topic))
+                        {
+                            _individual.JoinMessageBoardAsync(_selection.Topic);
+                            _selection.Topic = null;
+                        }
                     });
             }
         }

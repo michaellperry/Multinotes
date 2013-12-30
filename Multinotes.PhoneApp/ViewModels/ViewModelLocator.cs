@@ -4,13 +4,11 @@ using UpdateControls.XAML;
 
 namespace Multinotes.PhoneApp.ViewModels
 {
-    public class ViewModelLocator
+    public class ViewModelLocator : ViewModelLocatorBase
     {
         private readonly SynchronizationService _synchronizationService;
 
         private readonly MessageBoardSelectionModel _selection;
-        private readonly MainViewModel _main;
-        private readonly JoinMessageBoardViewModel _join;
 
         public ViewModelLocator()
         {
@@ -18,18 +16,27 @@ namespace Multinotes.PhoneApp.ViewModels
             if (!DesignerProperties.IsInDesignTool)
                 _synchronizationService.Initialize();
             _selection = new MessageBoardSelectionModel();
-            _main = new MainViewModel(_synchronizationService.Individual, _synchronizationService, _selection);
-            _join = new JoinMessageBoardViewModel(_selection, _synchronizationService.Individual);
         }
 
         public object Main
         {
-            get { return ForView.Wrap(_main); }
+            get
+            {
+                return ViewModel(() => new MainViewModel(
+                    _synchronizationService.Individual,
+                    _synchronizationService,
+                    _selection));
+            }
         }
 
         public object Join
         {
-            get { return ForView.Wrap(_join); }
+            get
+            {
+                return ViewModel(() => new JoinMessageBoardViewModel(
+                    _selection,
+                    _synchronizationService.Individual));
+            }
         }
     }
 }

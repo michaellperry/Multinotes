@@ -11,19 +11,50 @@ namespace Multinotes.PhoneApp.Views
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private static DependencyProperty SourceProperty = DependencyProperty.Register(
+            "Source",
+            typeof(object),
+            typeof(MainPage),
+            new PropertyMetadata(new PropertyChangedCallback(SourceChanged)));
+
         public MainPage()
         {
             InitializeComponent();
+        }
 
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var b = new System.Windows.Data.Binding();
+            this.SetBinding(SourceProperty, b);
+        }
+
+        public object Source
+        {
+            get { return GetValue(SourceProperty); }
+            set { SetValue(SourceProperty, value); }
+        }
+
+        private static void SourceChanged(
+            DependencyObject d,
+            DependencyPropertyChangedEventArgs e)
+        {
+            ((MainPage)d).OnSourceChanged();
+        }
+
+        private void OnSourceChanged()
+        {
             var viewModel = ForView.Unwrap<MainViewModel>(DataContext);
-            ForView.BindAppBarItem(
-                ApplicationBar.Buttons[0],
-                viewModel.SendMessage);
-            ForView.BindAppBarItem(
-                ApplicationBar.Buttons[2],
-                viewModel.LeaveBoard);
+            if (viewModel != null)
+            {
+                ForView.BindAppBarItem(
+                    ApplicationBar.Buttons[0],
+                    viewModel.SendMessage);
+                ForView.BindAppBarItem(
+                    ApplicationBar.Buttons[2],
+                    viewModel.LeaveBoard);
 
-            viewModel.ConfirmLeaveBoard += ConfirmLeaveBoard;
+                viewModel.ConfirmLeaveBoard += ConfirmLeaveBoard;
+            }
         }
 
         bool ConfirmLeaveBoard(MessageBoard messageBoard)
