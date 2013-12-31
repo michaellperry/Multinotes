@@ -37,7 +37,7 @@
         		<RowDefinition Height="*"/>
         	</Grid.RowDefinitions>
         	<TextBlock HorizontalAlignment="Left" Margin="8" TextWrapping="Wrap" Text="Group:" FontSize="{StaticResource PhoneFontSizeLarge}" d:LayoutOverrides="Height"/>
-            <TextBox Text="{Binding Topic, Mode=TwoWay}" Grid.Row="1" InputScope="Text">
+            <TextBox Text="{Binding Topic, Mode=TwoWay}" Grid.Row="1" InputScope="Text" TextChanged="TextBox_TextChanged">
             </TextBox>
         </Grid>
     </Grid>

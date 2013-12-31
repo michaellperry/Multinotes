@@ -3,6 +3,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Multinotes.PhoneApp.ViewModels;
 using UpdateControls.XAML;
+using System.Windows.Controls;
 
 namespace Multinotes.PhoneApp.Views
 {
@@ -28,6 +29,12 @@ namespace Multinotes.PhoneApp.Views
             if (viewModel != null)
                 viewModel.Topic = null;
             NavigationService.GoBack();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            textBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
     }
 }

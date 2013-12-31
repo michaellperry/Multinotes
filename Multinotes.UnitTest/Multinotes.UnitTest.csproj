@@ -41,7 +41,7 @@
     </Reference>
     <Reference Include="UpdateControls.Correspondence, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.2.2.0.2\lib\net45\UpdateControls.Correspondence.dll</HintPath>
+      <HintPath>..\packages\Correspondence.2.2.0.3\lib\net45\UpdateControls.Correspondence.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence.Memory">
       <HintPath>..\packages\Correspondence.UnitTest.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.Memory.dll</HintPath>

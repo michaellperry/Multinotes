@@ -29,8 +29,8 @@ namespace Multinotes.PhoneApp
             _community = new Community(storage);
             _community.AddAsynchronousCommunicationStrategy(communication);
             _community.Register<CorrespondenceModel>();
-            _community.Subscribe(() => _individual.Value);
-            _community.Subscribe(() => _individual.Value.MessageBoards);
+            _community.Subscribe(() => Individual);
+            _community.Subscribe(() => Individual.MessageBoards);
 
             CreateIndividual(http);
 
@@ -58,13 +58,26 @@ namespace Multinotes.PhoneApp
 
         public Individual Individual
         {
-            get { return _individual; }
+            get
+            {
+                lock (this)
+                {
+                    return _individual;
+                }
+            }
+            private set
+            {
+                lock (this)
+                {
+                    _individual.Value = value;
+                }
+            }
         }
 
         private async void CreateIndividual(HTTPConfigurationProvider http)
         {
             var individual = await _community.AddFactAsync(new Individual(GetAnonymousUserId()));
-            _individual.Value = individual;
+            Individual = individual;
             http.Individual = individual;
         }
 

@@ -17,71 +17,85 @@
     shell:SystemTray.IsVisible="True"
     Loaded="PhoneApplicationPage_Loaded"
     >
-	<phone:PhoneApplicationPage.Resources>
-		<Itzben:VisibleWhenTrueConverter x:Key="VisibleWhenTrueConverter"/>
-		<Itzben:VisibleWhenFalseConverter x:Key="VisibleWhenFalseConverter"/>
-		<DataTemplate x:Key="MessageViewModelTemplate">
-			<Border Background="{StaticResource PhoneAccentBrush}" Margin="0,4" Width="454">
-				<TextBlock Text="{Binding Text}" TextWrapping="Wrap" Margin="4" Foreground="{StaticResource PhoneForegroundBrush}"/>
-			</Border>
-		</DataTemplate>
-		<DataTemplate x:Key="MessageBoardViewModelTemplate">
-			<StackPanel>
-				<ListBox Height="607" ItemTemplate="{StaticResource MessageViewModelTemplate}" ItemsSource="{Binding Messages}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-			</StackPanel>
-		</DataTemplate>
-		<DataTemplate x:Key="ListPivotHeaderTemplate">
-			<Grid>
-				<TextBlock TextWrapping="Wrap" Text="{Binding Topic}" d:LayoutOverrides="Width, Height"/>
-			</Grid>
-		</DataTemplate>
-		<Style x:Key="PivotStyle" TargetType="controls:Pivot">
-			<Setter Property="Margin" Value="0"/>
-			<Setter Property="Padding" Value="0"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="ItemsPanel">
-				<Setter.Value>
-					<ItemsPanelTemplate>
-						<Grid/>
-					</ItemsPanelTemplate>
-				</Setter.Value>
-			</Setter>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="controls:Pivot">
-						<Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="Auto"/>
-								<RowDefinition Height="Auto"/>
-								<RowDefinition Height="Auto"/>
-								<RowDefinition/>
-							</Grid.RowDefinitions>
-							<ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,17,0,-7"/>
-							<controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>
-							<TextBox Text="{Binding Text, Mode=TwoWay}" Grid.Row="2" Visibility="{Binding ShowInstructions, Converter={StaticResource VisibleWhenFalseConverter}}" InputScope="Text">
-							</TextBox>
-							<ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="3"/>
-							<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Join a group." FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Grid.RowSpan="4" Width="480" VerticalAlignment="Center" TextAlignment="Center" Visibility="{Binding ShowInstructions, Converter={StaticResource VisibleWhenTrueConverter}}"/>
-						</Grid>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.Resources>
+        <Itzben:VisibleWhenTrueConverter x:Key="VisibleWhenTrueConverter"/>
+        <Itzben:VisibleWhenFalseConverter x:Key="VisibleWhenFalseConverter"/>
+        <DataTemplate x:Key="MessageViewModelTemplate">
+            <Border 
+                Background="{StaticResource PhoneAccentBrush}" 
+                Margin="0,4" 
+                Width="454">
+                <TextBlock 
+                    Text="{Binding Text}" 
+                    TextWrapping="Wrap" 
+                    Margin="4" 
+                    Foreground="{StaticResource PhoneForegroundBrush}"/>
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="MessageBoardViewModelTemplate">
+            <StackPanel>
+                <ListBox 
+                    Height="607" 
+                    ItemTemplate="{StaticResource MessageViewModelTemplate}" 
+                    ItemsSource="{Binding Messages}" 
+                    FontSize="{StaticResource PhoneFontSizeLarge}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ListPivotHeaderTemplate">
+            <Grid>
+                <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="{Binding Topic}" 
+                    d:LayoutOverrides="Width, Height"/>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="PivotStyle" TargetType="controls:Pivot">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Grid/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="controls:Pivot">
+                        <Grid HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,17,0,-7"/>
+                            <controlsPrimitives:PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1"/>
+                            <TextBox Text="{Binding Text, Mode=TwoWay}" Grid.Row="2" Visibility="{Binding ShowInstructions, Converter={StaticResource VisibleWhenFalseConverter}}" InputScope="Text">
+                            </TextBox>
+                            <ItemsPresenter x:Name="PivotItemPresenter" Margin="{TemplateBinding Padding}" Grid.Row="3"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Join a group." FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Grid.RowSpan="4" Width="480" VerticalAlignment="Center" TextAlignment="Center" Visibility="{Binding ShowInstructions, Converter={StaticResource VisibleWhenTrueConverter}}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
 
-	<phone:PhoneApplicationPage.FontFamily>
-		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
-	</phone:PhoneApplicationPage.FontFamily>
-	<phone:PhoneApplicationPage.FontSize>
-		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
-	</phone:PhoneApplicationPage.FontSize>
-	<phone:PhoneApplicationPage.Foreground>
-		<StaticResource ResourceKey="PhoneForegroundBrush"/>
-	</phone:PhoneApplicationPage.Foreground>
-	<phone:PhoneApplicationPage.DataContext>
-		<Binding Path="Main" Source="{StaticResource Locator}"/>
-	</phone:PhoneApplicationPage.DataContext>
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+    <phone:PhoneApplicationPage.DataContext>
+        <Binding Path="Main" Source="{StaticResource Locator}"/>
+    </phone:PhoneApplicationPage.DataContext>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
@@ -104,5 +118,5 @@
             Style="{StaticResource PivotStyle}"
             SelectionChanged="Pivot_SelectionChanged"/>
     </Grid>
-    
+
 </phone:PhoneApplicationPage>

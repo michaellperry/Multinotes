@@ -17,18 +17,18 @@ namespace Multinotes.WinApp.ViewModels
             if (!Windows.ApplicationModel.DesignMode.DesignModeEnabled)
                 _synchronizationService.Initialize();
             _selection = new MessageBoardSelectionModel();
-            if (_synchronizationService.Individual != null)
-                _selection.SelectedShare = _synchronizationService.Individual.Shares
-                    .FirstOrDefault();
+            _selection.SelectedShare = _synchronizationService.Individual.Shares
+                .FirstOrDefault();
         }
 
         public object Main
         {
             get
             {
-                return ViewModel(() => _synchronizationService.Individual == null
-                    ? null
-                    : new MainViewModel(_synchronizationService.Individual, _synchronizationService, _selection));
+                return ViewModel(() => new MainViewModel(
+                    _synchronizationService.Individual,
+                    _synchronizationService,
+                    _selection));
             }
         }
 
@@ -36,10 +36,9 @@ namespace Multinotes.WinApp.ViewModels
         {
             get
             {
-                return ViewModel(() =>
-                    _synchronizationService.Individual == null
-                    ? null
-                    : new JoinMessageBoardViewModel(_selection, _synchronizationService.Individual));
+                return ViewModel(() => new JoinMessageBoardViewModel(
+                    _selection,
+                    _synchronizationService.Individual));
             }
         }
     }

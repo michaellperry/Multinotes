@@ -43,6 +43,7 @@ namespace Multinotes.PhoneApp.ViewModels
             {
                 return
                     !_synchronizationService.Community.Synchronizing &&
+                    !_individual.IsNull &&
                     !_individual.MessageBoards.Any();
             }
         }
