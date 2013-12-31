@@ -99,7 +99,7 @@
     </Reference>
     <Reference Include="UpdateControls, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -107,15 +107,15 @@
     </Reference>
     <Reference Include="UpdateControls.Correspondence.BinaryHTTPClient, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.BinaryHTTPClient.dll</HintPath>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\net45\UpdateControls.Correspondence.BinaryHTTPClient.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence.Data, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.Data.dll</HintPath>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\net45\UpdateControls.Correspondence.Data.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence.FileStream, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.FileStream.dll</HintPath>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\net45\UpdateControls.Correspondence.FileStream.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence.SQL, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -123,15 +123,15 @@
     </Reference>
     <Reference Include="UpdateControls.Correspondence.SSCE, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.SSCE.dll</HintPath>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\net45\UpdateControls.Correspondence.SSCE.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Forms, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.Forms.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.Forms.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.XAML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\net45\UpdateControls.XAML.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.XAML.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>

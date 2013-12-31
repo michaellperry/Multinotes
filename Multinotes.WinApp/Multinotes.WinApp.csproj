@@ -154,27 +154,33 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="UpdateControls">
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\win81\UpdateControls.dll</HintPath>
+    <Reference Include="UpdateControls, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\win81\UpdateControls.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Correspondence.2.2.0.3\lib\win81\UpdateControls.Correspondence.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.Correspondence.BinaryHTTPClient">
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\win81\UpdateControls.Correspondence.BinaryHTTPClient.dll</HintPath>
+    <Reference Include="UpdateControls.Correspondence.BinaryHTTPClient, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\win81\UpdateControls.Correspondence.BinaryHTTPClient.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.Correspondence.BinaryHTTPClient.Notifications">
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\win81\UpdateControls.Correspondence.BinaryHTTPClient.Notifications.dll</HintPath>
+    <Reference Include="UpdateControls.Correspondence.BinaryHTTPClient.Notifications, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\win81\UpdateControls.Correspondence.BinaryHTTPClient.Notifications.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.Correspondence.Data">
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\win81\UpdateControls.Correspondence.Data.dll</HintPath>
+    <Reference Include="UpdateControls.Correspondence.Data, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\win81\UpdateControls.Correspondence.Data.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.Correspondence.FileStream">
-      <HintPath>..\packages\Correspondence.App.Core.2.2.0.0\lib\win81\UpdateControls.Correspondence.FileStream.dll</HintPath>
+    <Reference Include="UpdateControls.Correspondence.FileStream, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Correspondence.App.Core.2.2.0.4\lib\win81\UpdateControls.Correspondence.FileStream.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.XAML">
-      <HintPath>..\packages\UpdateControls.2.3.0.1\lib\win81\UpdateControls.XAML.dll</HintPath>
+    <Reference Include="UpdateControls.XAML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\win81\UpdateControls.XAML.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
