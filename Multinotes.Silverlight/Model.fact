@@ -1,0 +1,6 @@
+namespace Multinotes.Silverlight;
+
+fact Individual {
+key:
+    string anonymousId;
+}

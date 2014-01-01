@@ -38,22 +38,23 @@
     <Reference Include="System" />
     <Reference Include="UpdateControls, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Correspondence.2.2.0.3\lib\net45\UpdateControls.Correspondence.dll</HintPath>
+      <HintPath>..\packages\Correspondence.2.2.0.5\lib\net45\UpdateControls.Correspondence.dll</HintPath>
     </Reference>
-    <Reference Include="UpdateControls.Correspondence.Memory">
-      <HintPath>..\packages\Correspondence.UnitTest.Core.2.2.0.0\lib\net45\UpdateControls.Correspondence.Memory.dll</HintPath>
+    <Reference Include="UpdateControls.Correspondence.Memory, Version=2.2.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Correspondence.UnitTest.Core.2.2.0.5\lib\net45\UpdateControls.Correspondence.Memory.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Forms, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.Forms.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.Forms.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.XAML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=19e83a8289e31a8f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\net45\UpdateControls.XAML.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\net45\UpdateControls.XAML.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>

@@ -48,10 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UpdateControls">
-      <HintPath>..\packages\UpdateControls.2.3.0.2\lib\portable-net45+sl50+wp80+win\UpdateControls.dll</HintPath>
+      <HintPath>..\packages\UpdateControls.2.3.0.4\lib\portable-net45+sl50+wp80+win\UpdateControls.dll</HintPath>
     </Reference>
     <Reference Include="UpdateControls.Correspondence">
-      <HintPath>..\packages\Correspondence.2.2.0.3\lib\portable-net45+wp80+win\UpdateControls.Correspondence.dll</HintPath>
+      <HintPath>..\packages\Correspondence.2.2.0.5\lib\portable-net45+wp80+win\UpdateControls.Correspondence.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

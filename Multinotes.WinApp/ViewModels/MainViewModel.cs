@@ -14,7 +14,10 @@ namespace Multinotes.WinApp.ViewModels
         private SynchronizationService _synchronizationService;
         private MessageBoardSelectionModel _selection;
 
-        public MainViewModel(Individual individual, SynchronizationService synhronizationService, MessageBoardSelectionModel selection)
+        public MainViewModel(
+            Individual individual, 
+            SynchronizationService synhronizationService, 
+            MessageBoardSelectionModel selection)
         {
             _individual = individual;
             _synchronizationService = synhronizationService;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application x:Class="Multinotes.Desktop.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="MainWindow.xaml" xmlns:vm="clr-namespace:Multinotes.Desktop.ViewModels">
-    <Application.Resources>
-         
-    <vm:ViewModelLocator x:Key="Locator" /></Application.Resources>
-</Application>
+<Application x:Class="Multinotes.Desktop.App" StartupUri="MainWindow.xaml" xmlns:p1="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="clr-namespace:Multinotes.Desktop.ViewModels">
+    
+<Application.Resources>
+      <vm:ViewModelLocator x:Key="Locator" />
+    </Application.Resources></Application>

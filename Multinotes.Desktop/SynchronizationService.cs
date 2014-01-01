@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 using UpdateControls.Correspondence;
 using UpdateControls.Correspondence.BinaryHTTPClient;
+using UpdateControls.Correspondence.Memory;
 using UpdateControls.Correspondence.SSCE;
 using UpdateControls.Fields;
 
@@ -19,7 +20,8 @@ namespace Multinotes.Desktop
         private static readonly Regex Punctuation = new Regex(@"[{}\-]");
 
         private Community _community;
-        private Independent<Individual> _individual = new Independent<Individual>();
+        private Independent<Individual> _individual = new Independent<Individual>(
+            Individual.GetNullInstance());
 
         public void Initialize()
         {
@@ -31,9 +33,10 @@ namespace Multinotes.Desktop
             _community = new Community(storage);
             _community.AddAsynchronousCommunicationStrategy(communication);
             _community.Register<CorrespondenceModel>();
-            _community.Subscribe(() => _individual.Value);
+            _community.Subscribe(() => Individual);
+            _community.Subscribe(() => Individual.MessageBoards);
 
-            LoadIndividual();
+            CreateIndividual();
 
             // Synchronize whenever the user has something to send.
             _community.FactAdded += delegate
@@ -56,6 +59,14 @@ namespace Multinotes.Desktop
             _community.BeginReceiving();
         }
 
+        public void InitializeDesignMode()
+        {
+            _community = new Community(new MemoryStorageStrategy());
+            _community.Register<CorrespondenceModel>();
+
+            CreateIndividualDesignData();
+        }
+
         public Community Community
         {
             get { return _community; }
@@ -70,9 +81,16 @@ namespace Multinotes.Desktop
                     return _individual;
                 }
             }
+            private set
+            {
+                lock (this)
+                {
+                    _individual.Value = value;
+                }
+            }
         }
 
-        private async void LoadIndividual()
+        private async void CreateIndividual()
         {
             var individual = await _community.LoadFactAsync<Individual>(ThisIndividual);
             if (individual == null)
@@ -81,10 +99,19 @@ namespace Multinotes.Desktop
                 individual = await _community.AddFactAsync(new Individual(randomId));
                 await _community.SetFactAsync(ThisIndividual, individual);
             }
-			lock (this)
-			{
-				_individual.Value = individual;
-			}
+            Individual = individual;
+        }
+
+        private async void CreateIndividualDesignData()
+        {
+            var individual = await _community.AddFactAsync(new Individual("design"));
+            var first = await individual.JoinMessageBoardAsync("Correspondence");
+            first.MessageBoard.SendMessageAsync("First Message");
+            first.MessageBoard.SendMessageAsync("Second Message");
+            var second = await individual.JoinMessageBoardAsync("Azure");
+            second.MessageBoard.SendMessageAsync("Another Message");
+            second.MessageBoard.SendMessageAsync("Final Message");
+            Individual = individual;
         }
     }
 }

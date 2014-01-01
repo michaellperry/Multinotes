@@ -1,5 +1,7 @@
-using System.ComponentModel;
 using Multinotes.PhoneApp.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UpdateControls.XAML;
 
 namespace Multinotes.PhoneApp.ViewModels
@@ -13,8 +15,10 @@ namespace Multinotes.PhoneApp.ViewModels
         public ViewModelLocator()
         {
             _synchronizationService = new SynchronizationService();
-            if (!DesignerProperties.IsInDesignTool)
+            if (!DesignMode)
                 _synchronizationService.Initialize();
+            else
+                _synchronizationService.InitializeDesignData();
             _selection = new MessageBoardSelectionModel();
         }
 

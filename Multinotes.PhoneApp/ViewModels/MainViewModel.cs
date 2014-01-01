@@ -96,9 +96,10 @@ namespace Multinotes.PhoneApp.ViewModels
                     .When(() => _selection.SelectedShare != null)
                     .Do(delegate
                     {
-                        if (ConfirmLeaveBoard != null && ConfirmLeaveBoard(_selection.SelectedShare.MessageBoard))
+                        var share = _selection.SelectedShare;
+                        if (ConfirmLeaveBoard != null && ConfirmLeaveBoard(share.MessageBoard))
                         {
-                            _selection.SelectedShare.Leave();
+                            share.Leave();
                             _selection.SelectedShare = null;
                         }
                     });

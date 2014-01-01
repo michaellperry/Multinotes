@@ -2,7 +2,7 @@ using System.Linq;
 using UpdateControls.Fields;
 using UpdateControls.Correspondence.BinaryHTTPClient;
 
-namespace Multinotes.Desktop
+namespace Multinotes.Silverlight
 {
     public class HTTPConfigurationProvider : IHTTPConfigurationProvider
     {
@@ -11,9 +11,9 @@ namespace Multinotes.Desktop
             get
             {
                 string address = "https://api.facetedworlds.com/correspondence_server_web/bin";
-                string apiKey = "D1920D309A4E43EB85BD14833AFEF7E8";
+                string apiKey = "<<Your API key>>";
 				int timeoutSeconds = 30;
-                return new HTTPConfiguration(address, "Multinotes.Desktop", apiKey, timeoutSeconds);
+                return new HTTPConfiguration(address, "Multinotes.Silverlight", apiKey, timeoutSeconds);
             }
         }
     }

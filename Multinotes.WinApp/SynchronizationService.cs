@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using UpdateControls.Correspondence;
 using UpdateControls.Correspondence.BinaryHTTPClient;
 using UpdateControls.Correspondence.FileStream;
+using UpdateControls.Correspondence.Memory;
 using UpdateControls.Fields;
 using Windows.Storage;
 using Windows.UI.Xaml;
@@ -46,7 +47,7 @@ namespace Multinotes.WinApp
             };
             timer.Start();
 
-            LoadIndividual(http);
+            CreateIndividual(http);
 
             // Synchronize whenever the user has something to send.
             _community.FactAdded += delegate
@@ -63,6 +64,14 @@ namespace Multinotes.WinApp
 
             // And synchronize on startup or resume.
             Synchronize();
+        }
+
+        public void InitializeDesignMode()
+        {
+            _community = new Community(new MemoryStorageStrategy());
+            _community.Register<CorrespondenceModel>();
+
+            CreateIndividualDesignData();
         }
 
         public Community Community
@@ -94,7 +103,7 @@ namespace Multinotes.WinApp
             _community.BeginReceiving();
         }
 
-        private async void LoadIndividual(HTTPConfigurationProvider http)
+        private async void CreateIndividual(HTTPConfigurationProvider http)
         {
             Individual individual = await _community.LoadFactAsync<Individual>(ThisIndividual);
             if (individual == null)
@@ -105,6 +114,18 @@ namespace Multinotes.WinApp
             }
             Individual = individual;
             http.Individual = individual;
+        }
+
+        private async void CreateIndividualDesignData()
+        {
+            var individual = await _community.AddFactAsync(new Individual("design"));
+            var first = await individual.JoinMessageBoardAsync("Correspondence");
+            first.MessageBoard.SendMessageAsync("First Message");
+            first.MessageBoard.SendMessageAsync("Second Message");
+            var second = await individual.JoinMessageBoardAsync("Azure");
+            second.MessageBoard.SendMessageAsync("Another Message");
+            second.MessageBoard.SendMessageAsync("Final Message");
+            Individual = individual;
         }
     }
 }

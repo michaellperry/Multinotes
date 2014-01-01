@@ -19,11 +19,6 @@ namespace Multinotes.PhoneApp.ViewModels
             get { return _share; }
         }
 
-        public string Topic
-        {
-            get { return _share.MessageBoard.Topic; }
-        }
-
         public IEnumerable<MessageViewModel> Messages
         {
             get
@@ -32,6 +27,11 @@ namespace Multinotes.PhoneApp.ViewModels
                     from message in _share.MessageBoard.Messages
                     select new MessageViewModel(message);
             }
+        }
+
+        public override string ToString()
+        {
+            return _share.MessageBoard.Topic;
         }
 
         public override bool Equals(object obj)

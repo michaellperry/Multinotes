@@ -9,6 +9,7 @@ using UpdateControls.Correspondence.BinaryHTTPClient;
 using UpdateControls.Correspondence.BinaryHTTPClient.Notification;
 using Multinotes.Model;
 using UpdateControls.Fields;
+using UpdateControls.Correspondence.Memory;
 
 namespace Multinotes.PhoneApp
 {
@@ -51,6 +52,14 @@ namespace Multinotes.PhoneApp
             Synchronize();
         }
 
+        public void InitializeDesignData()
+        {
+            _community = new Community(new MemoryStorageStrategy());
+            _community.Register<CorrespondenceModel>();
+
+            CreateIndividualDesignData();
+        }
+
         public Community Community
         {
             get { return _community; }
@@ -79,6 +88,18 @@ namespace Multinotes.PhoneApp
             var individual = await _community.AddFactAsync(new Individual(GetAnonymousUserId()));
             Individual = individual;
             http.Individual = individual;
+        }
+
+        private async void CreateIndividualDesignData()
+        {
+            var individual = await _community.AddFactAsync(new Individual("design"));
+            var first = await individual.JoinMessageBoardAsync("Correspondence");
+            first.MessageBoard.SendMessageAsync("First Message");
+            first.MessageBoard.SendMessageAsync("Second Message");
+            var second = await individual.JoinMessageBoardAsync("Azure");
+            second.MessageBoard.SendMessageAsync("Another Message");
+            second.MessageBoard.SendMessageAsync("Final Message");
+            Individual = individual;
         }
 
         public void Synchronize()
