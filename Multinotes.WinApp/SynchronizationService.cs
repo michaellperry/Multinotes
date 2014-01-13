@@ -103,29 +103,35 @@ namespace Multinotes.WinApp
             _community.BeginReceiving();
         }
 
-        private async void CreateIndividual(HTTPConfigurationProvider http)
+        private void CreateIndividual(HTTPConfigurationProvider http)
         {
-            Individual individual = await _community.LoadFactAsync<Individual>(ThisIndividual);
-            if (individual == null)
+            Community.Perform(async delegate
             {
-                string randomId = Punctuation.Replace(Guid.NewGuid().ToString(), String.Empty).ToLower();
-                individual = await _community.AddFactAsync(new Individual(randomId));
-                await _community.SetFactAsync(ThisIndividual, individual);
-            }
-            Individual = individual;
-            http.Individual = individual;
+                Individual individual = await _community.LoadFactAsync<Individual>(ThisIndividual);
+                if (individual == null)
+                {
+                    string randomId = Punctuation.Replace(Guid.NewGuid().ToString(), String.Empty).ToLower();
+                    individual = await _community.AddFactAsync(new Individual(randomId));
+                    await _community.SetFactAsync(ThisIndividual, individual);
+                }
+                Individual = individual;
+                http.Individual = individual;
+            });
         }
 
-        private async void CreateIndividualDesignData()
+        private void CreateIndividualDesignData()
         {
-            var individual = await _community.AddFactAsync(new Individual("design"));
-            var first = await individual.JoinMessageBoardAsync("Correspondence");
-            first.MessageBoard.SendMessageAsync("First Message");
-            first.MessageBoard.SendMessageAsync("Second Message");
-            var second = await individual.JoinMessageBoardAsync("Azure");
-            second.MessageBoard.SendMessageAsync("Another Message");
-            second.MessageBoard.SendMessageAsync("Final Message");
-            Individual = individual;
+            Community.Perform(async delegate
+            {
+                var individual = await _community.AddFactAsync(new Individual("design"));
+                var first = await individual.JoinMessageBoardAsync("Correspondence");
+                first.MessageBoard.SendMessage("First Message");
+                first.MessageBoard.SendMessage("Second Message");
+                var second = await individual.JoinMessageBoardAsync("Azure");
+                second.MessageBoard.SendMessage("Another Message");
+                second.MessageBoard.SendMessage("Final Message");
+                Individual = individual;
+            });
         }
     }
 }

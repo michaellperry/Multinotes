@@ -83,10 +83,13 @@ namespace Multinotes.Web
             }
         }
 
-        private async void LoadDomain()
+        private void LoadDomain()
         {
-            var domain = await _community.AddFactAsync(new Domain());
-            Domain = domain;
+            _community.Perform(async delegate
+            {
+                var domain = await _community.AddFactAsync(new Domain());
+                Domain = domain;
+            });
         }
     }
 }

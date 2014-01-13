@@ -4,10 +4,13 @@ namespace Multinotes.Model
 {
     public partial class MessageBoard
     {
-        public async void SendMessageAsync(string text)
+        public void SendMessage(string text)
         {
-            var domain = await Community.AddFactAsync(new Domain());
-            await Community.AddFactAsync(new Message(this, domain, text));
+            Community.Perform(async delegate
+            {
+                var domain = await Community.AddFactAsync(new Domain());
+                await Community.AddFactAsync(new Message(this, domain, text));
+            });
         }
     }
 }

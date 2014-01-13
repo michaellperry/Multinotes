@@ -82,7 +82,7 @@ namespace Multinotes.PhoneApp.ViewModels
                         !String.IsNullOrEmpty(_selection.Text))
                     .Do(delegate
                     {
-                        _selection.SelectedShare.MessageBoard.SendMessageAsync(_selection.Text);
+                        _selection.SelectedShare.MessageBoard.SendMessage(_selection.Text);
                         _selection.Text = null;
                     });
             }

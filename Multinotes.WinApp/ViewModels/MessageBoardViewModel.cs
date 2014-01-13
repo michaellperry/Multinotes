@@ -55,7 +55,7 @@ namespace Multinotes.WinApp.ViewModels
                         if (_selection.SelectedShare != null &&
                             !String.IsNullOrEmpty(_selection.Text))
                         {
-                            _selection.SelectedShare.MessageBoard.SendMessageAsync(_selection.Text);
+                            _selection.SelectedShare.MessageBoard.SendMessage(_selection.Text);
                             _selection.Text = null;
                         }
                     });
