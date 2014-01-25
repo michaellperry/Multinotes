@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Multinotes.Web;
 using Multinotes.Web.Controllers;
+using System.Threading.Tasks;
 
 namespace Multinotes.Web.Tests.Controllers
 {
@@ -13,16 +14,18 @@ namespace Multinotes.Web.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public async Task Index()
         {
             // Arrange
+            MvcApplication.SynchronizationService.InitializeForTest();
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = await controller.Index() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            var viewModel = result.Model as Multinotes.Web.Models.HomeViewModel;
+            Assert.AreEqual(3, viewModel.RecentMessageBoards.Count);
         }
 
         [TestMethod]
@@ -35,7 +38,7 @@ namespace Multinotes.Web.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("Multinotes example application", result.ViewBag.Message);
         }
 
         [TestMethod]

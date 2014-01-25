@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Multinotes.Model;
 using UpdateControls.Fields;
+using UpdateControls.Correspondence.Memory;
 
 namespace Multinotes.Web
 {
@@ -54,10 +55,13 @@ namespace Multinotes.Web
             };
             synchronizeTimer.Interval = 5.0 * 60.0 * 1000.0;
             synchronizeTimer.Start();
+        }
 
-            // And synchronize on startup.
-            _community.BeginSending();
-            _community.BeginReceiving();
+        public void InitializeForTest()
+        {
+            _community = new Community(new MemoryStorageStrategy());
+            _community.Register<CorrespondenceModel>();
+            LoadDomain();
         }
 
         public Community Community
@@ -89,6 +93,9 @@ namespace Multinotes.Web
             {
                 var domain = await _community.AddFactAsync(new Domain());
                 Domain = domain;
+
+                _community.BeginSending();
+                _community.BeginReceiving();
             });
         }
     }

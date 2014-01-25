@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multinotes.Model", "Multinotes.Model\Multinotes.Model.csproj", "{0B7873B9-CE6F-4CC9-B468-69695C37CA2D}"
 EndProject
@@ -57,9 +57,9 @@ Global
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|ARM.ActiveCfg = Debug|ARM
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|ARM.Build.0 = Debug|ARM
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|ARM.Deploy.0 = Debug|ARM
-		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|x64.ActiveCfg = Debug|x64
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|x64.Build.0 = Debug|x64
 		{8E49D429-5045-4561-A144-4F738DE78D8B}.Debug|x64.Deploy.0 = Debug|x64
@@ -87,9 +87,9 @@ Global
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|ARM.Build.0 = Debug|ARM
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|ARM.Deploy.0 = Debug|ARM
-		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|x86.ActiveCfg = Debug|x86
 		{0F8C15A5-73FD-495F-88B0-16F55187F7BD}.Debug|x86.Build.0 = Debug|x86
@@ -149,9 +149,8 @@ Global
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|ARM.ActiveCfg = Debug|ARM
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|ARM.Build.0 = Debug|ARM
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|ARM.Deploy.0 = Debug|ARM
-		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|x64.ActiveCfg = Debug|x64
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|x64.Build.0 = Debug|x64
 		{7CA16335-F026-4AA7-812C-7C5C0E36F698}.Debug|x64.Deploy.0 = Debug|x64
